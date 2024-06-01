@@ -1,5 +1,4 @@
 import json
-import threading
 import time
 from datetime import datetime
 from datetime import time as dtime
