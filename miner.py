@@ -153,7 +153,7 @@ async def home():
 
 
 @app.on_event("startup")
-@repeat_every(seconds=216000, wait_first=True)
+@repeat_every(seconds=3600, wait_first=True)
 async def app_sync():
     current_time = datetime.now().time()
     start_time = dtime(15, 0)  # 3 PM
