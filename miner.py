@@ -4,15 +4,13 @@ from datetime import datetime
 from datetime import time as dtime
 
 import requests
-from fastapi import FastAPI
-from fastapi_utils.tasks import repeat_every
+import schedule
 
 base_url = "https://api.hamsterkombat.io/clicker"
 
 token = "1717254327445e87Q4fmfmZRB1KahLu5XVAvT9yYOdJWO3TGKCozq4tT1NTENmQOUdebGhJ6oEItu890214723"
 name = "User 01"
 
-app = FastAPI()
 
 headers= {
         "Accept": "*/*",
@@ -51,6 +49,14 @@ post_headers =  {
         "sec-ch-ua-platform": "\"macOS\""
     }
 
+def send(text):
+    url = "https://api.telegram.org/bot7281452319:AAGAapxooSfOuG_7J4R_VJOZSq-NQesACNQ/sendMessage"
+    params = {
+        "chat_id": "890214723",
+        "text": text  # Replace this with the actual server name or retrieve it dynamically
+    }
+    requests.post(url, params=params)
+
 def get_data(url, data=None):
     
     try:
@@ -78,6 +84,8 @@ def upgrades():
     dict_data = get_data("/upgrades-for-buy")
     other_list = []
 
+    print(sync_data['clickerUser']['lastSyncUpdate'])
+
     for item in dict_data['upgradesForBuy']:
         if item["profitPerHourDelta"] == 0 or not item["isAvailable"] or item["price"] > sync_data['clickerUser']['balanceCoins']:
             continue
@@ -87,7 +95,6 @@ def upgrades():
                 "name": item["name"],
                 "price": item["price"],
                 "section": item["section"],
-                "condition": item["condition"],
                 "profitPerHourDelta": item["profitPerHourDelta"],
                 "efficiency": item['price'] / item['profitPerHourDelta'],
             })
@@ -122,6 +129,8 @@ def new_tap():
         # print(e)
 
 def execute_upgrades(upgrades_list):
+
+    old_earnPassivePerHour = sync()['clickerUser']['earnPassivePerHour']
    
     if upgrades_list:
         for item in upgrades_list:
@@ -130,39 +139,37 @@ def execute_upgrades(upgrades_list):
                 string_data = res.content.decode('utf-8')
                 data = json.loads(string_data)
                 if data['clickerUser']:
-                    print(f"{name}: {item['name']} was upgraded")
+                    send(f"{name}: {item['name']} was upgraded \n Your profit per our has increased from {old_earnPassivePerHour} to {old_earnPassivePerHour+item['profitPerHourDelta']} by {item['profitPerHourDelta']}")
                     execute_upgrades(upgrades())
                     break
             except Exception as e:
                 pass
                 # print(e)
     else:
-        print(f"{name}: No upgrades to execute")
+        send(f"{name}: No upgrades to execute")
 
     return True
 
 
-@app.get('/')
-async def home():
-    upgrades_all = upgrades()
-    # return upgrades_all
-    response = requests.post(f"{base_url}/sync", headers=headers)
-    return upgrades_all
 
-
-
-@app.on_event("startup")
-@repeat_every(seconds=3600, wait_first=True)
-async def app_sync():
+def app_sync():
+    print("Started app_sync")
     current_time = datetime.now().time()
     start_time = dtime(15, 0)  # 3 PM
     end_time = dtime(18, 0)    # 6 PM
 
     if start_time <= current_time <= end_time:
-        print("The current time is between 3 PM and 6 PM.")
+        send("The current time is between 3 PM and 6 PM.")
     else:
         upgrades_all = upgrades()
-        print(f"{name}: Query execution started")
+        send(f"{name}: Query execution started")
         execute_upgrades(upgrades_all)
 
-        
+
+if __name__ == '__main__':
+    
+    schedule.every(10).seconds.do(app_sync)
+
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
