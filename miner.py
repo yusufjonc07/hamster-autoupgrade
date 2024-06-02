@@ -153,7 +153,6 @@ def execute_upgrades(upgrades_list):
 
 
 def app_sync():
-    print("Started app_sync")
     current_time = datetime.now().time()
     start_time = dtime(15, 0)  # 3 PM
     end_time = dtime(18, 0)    # 6 PM
@@ -168,7 +167,9 @@ def app_sync():
 
 if __name__ == '__main__':
     
-    schedule.every(10).seconds.do(app_sync)
+
+    print("Starting app_sync")
+    schedule.every(1).hour.do(app_sync)
 
     while True:
         schedule.run_pending()
