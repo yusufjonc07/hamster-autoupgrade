@@ -175,7 +175,7 @@ def execute_upgrades(upgrades_list):
                 data = json.loads(string_data)
                 if data["clickerUser"]:
                     send(
-                        f"{name}: {item['name']} was upgraded \n Your profit per our has increased from {old_earnPassivePerHour} to {old_earnPassivePerHour+item['profitPerHourDelta']} by {item['profitPerHourDelta']}"
+                        f"{name}: {item['name']} was upgraded \n Your profit per our has increased from {old_earnPassivePerHour} to {old_earnPassivePerHour+item['profitPerHourDelta']} by {item['profitPerHourDelta']} for {item['price']}"
                     )
                     execute_upgrades(upgrades())
                     break
@@ -204,6 +204,8 @@ def app_sync():
 if __name__ == "__main__":
 
     print("Starting app_sync")
+
+    app_sync()
 
     schedule.every(1).hour.do(app_sync)
 
