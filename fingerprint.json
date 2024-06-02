@@ -1,0 +1,285 @@
+{
+    "version": "4.2.1",
+    "visitorId": "acb9aef6119299ef8b5743214adb44e9",
+    "components": {
+        "fonts": {
+            "value": [
+                "Arial Unicode MS",
+                "Gill Sans",
+                "Helvetica Neue",
+                "Menlo"
+            ],
+            "duration": 58
+        },
+        "domBlockers": {
+            "duration": 16
+        },
+        "fontPreferences": {
+            "value": {
+                "default": 147.5625,
+                "apple": 147.5625,
+                "serif": 147.5625,
+                "sans": 144.015625,
+                "mono": 133.0625,
+                "min": 9.234375,
+                "system": 146.09375
+            },
+            "duration": 21
+        },
+        "audio": {
+            "value": 0.0000612874,
+            "duration": 55
+        },
+        "screenFrame": {
+            "value": [
+                40,
+                0,
+                0,
+                0
+            ],
+            "duration": 0
+        },
+        "canvas": null,
+        "osCpu": {
+            "duration": 0
+        },
+        "languages": {
+            "value": [
+                [
+                    "en-US"
+                ]
+            ],
+            "duration": 0
+        },
+        "colorDepth": {
+            "value": 30,
+            "duration": 0
+        },
+        "deviceMemory": {
+            "value": 8,
+            "duration": 0
+        },
+        "screenResolution": {
+            "value": [
+                982,
+                1512
+            ],
+            "duration": 0
+        },
+        "hardwareConcurrency": {
+            "value": 8,
+            "duration": 0
+        },
+        "timezone": {
+            "value": "Asia/Tashkent",
+            "duration": 8
+        },
+        "sessionStorage": {
+            "value": true,
+            "duration": 0
+        },
+        "localStorage": {
+            "value": true,
+            "duration": 0
+        },
+        "indexedDB": {
+            "value": true,
+            "duration": 0
+        },
+        "openDatabase": {
+            "value": false,
+            "duration": 0
+        },
+        "cpuClass": {
+            "duration": 0
+        },
+        "platform": {
+            "value": "MacIntel",
+            "duration": 0
+        },
+        "plugins": {
+            "value": [
+                {
+                    "name": "PDF Viewer",
+                    "description": "Portable Document Format",
+                    "mimeTypes": [
+                        {
+                            "type": "application/pdf",
+                            "suffixes": "pdf"
+                        },
+                        {
+                            "type": "text/pdf",
+                            "suffixes": "pdf"
+                        }
+                    ]
+                },
+                {
+                    "name": "Chrome PDF Viewer",
+                    "description": "Portable Document Format",
+                    "mimeTypes": [
+                        {
+                            "type": "application/pdf",
+                            "suffixes": "pdf"
+                        },
+                        {
+                            "type": "text/pdf",
+                            "suffixes": "pdf"
+                        }
+                    ]
+                },
+                {
+                    "name": "Chromium PDF Viewer",
+                    "description": "Portable Document Format",
+                    "mimeTypes": [
+                        {
+                            "type": "application/pdf",
+                            "suffixes": "pdf"
+                        },
+                        {
+                            "type": "text/pdf",
+                            "suffixes": "pdf"
+                        }
+                    ]
+                },
+                {
+                    "name": "Microsoft Edge PDF Viewer",
+                    "description": "Portable Document Format",
+                    "mimeTypes": [
+                        {
+                            "type": "application/pdf",
+                            "suffixes": "pdf"
+                        },
+                        {
+                            "type": "text/pdf",
+                            "suffixes": "pdf"
+                        }
+                    ]
+                },
+                {
+                    "name": "WebKit built-in PDF",
+                    "description": "Portable Document Format",
+                    "mimeTypes": [
+                        {
+                            "type": "application/pdf",
+                            "suffixes": "pdf"
+                        },
+                        {
+                            "type": "text/pdf",
+                            "suffixes": "pdf"
+                        }
+                    ]
+                }
+            ],
+            "duration": 1
+        },
+        "touchSupport": {
+            "value": {
+                "maxTouchPoints": 0,
+                "touchEvent": false,
+                "touchStart": false
+            },
+            "duration": 0
+        },
+        "vendor": {
+            "value": "Google Inc.",
+            "duration": 0
+        },
+        "vendorFlavors": {
+            "value": [
+                "chrome"
+            ],
+            "duration": 0
+        },
+        "cookiesEnabled": {
+            "value": false,
+            "duration": 0
+        },
+        "colorGamut": {
+            "value": "p3",
+            "duration": 0
+        },
+        "invertedColors": {
+            "duration": 0
+        },
+        "forcedColors": {
+            "value": false,
+            "duration": 0
+        },
+        "monochrome": {
+            "value": 0,
+            "duration": 0
+        },
+        "contrast": {
+            "value": 0,
+            "duration": 0
+        },
+        "reducedMotion": {
+            "value": false,
+            "duration": 0
+        },
+        "reducedTransparency": {
+            "value": false,
+            "duration": 0
+        },
+        "hdr": {
+            "value": true,
+            "duration": 0
+        },
+        "math": {
+            "value": {
+                "acos": 1.4473588658278522,
+                "acosh": 709.889355822726,
+                "acoshPf": 355.291251501643,
+                "asin": 0.12343746096704435,
+                "asinh": 0.881373587019543,
+                "asinhPf": 0.8813735870195429,
+                "atanh": 0.5493061443340548,
+                "atanhPf": 0.5493061443340548,
+                "atan": 0.4636476090008061,
+                "sin": 0.8178819121159085,
+                "sinh": 1.1752011936438014,
+                "sinhPf": 2.534342107873324,
+                "cos": -0.8390715290095377,
+                "cosh": 1.5430806348152437,
+                "coshPf": 1.5430806348152437,
+                "tan": -1.4214488238747245,
+                "tanh": 0.7615941559557649,
+                "tanhPf": 0.7615941559557649,
+                "exp": 2.718281828459045,
+                "expm1": 1.718281828459045,
+                "expm1Pf": 1.718281828459045,
+                "log1p": 2.3978952727983707,
+                "log1pPf": 2.3978952727983707,
+                "powPI": 1.9275814160560204e-50
+            },
+            "duration": 0
+        },
+        "pdfViewerEnabled": {
+            "value": true,
+            "duration": 0
+        },
+        "architecture": {
+            "value": 127,
+            "duration": 0
+        },
+        "applePay": {
+            "value": -1,
+            "duration": 0
+        },
+        "privateClickMeasurement": {
+            "duration": 0
+        },
+        "webGlBasics": {
+            "value": {
+                "version": "WebGL 1.0 (OpenGL ES 2.0 Chromium)",
+                "vendor": "WebKit",
+                "vendorUnmasked": "Google Inc. (Apple)",
+                "renderer": "WebKit WebGL",
+                "rendererUnmasked": "ANGLE (Apple, ANGLE Metal Renderer: Apple M1 Pro, Unspecified Version)",
+                "shadingLanguageVersion": "WebGL GLSL ES 1.0 (OpenGL ES GLSL ES 1.0 Chromium)"
+            },
+            "duration": 4
+        },
+        "webGlExtensions": null
+    }
+}
